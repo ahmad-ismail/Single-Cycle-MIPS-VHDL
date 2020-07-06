@@ -1,0 +1,15 @@
+main:
+addi $s0, $0, 92
+addi $s1, $0, 16
+loop:
+beq $s0, $s1, done
+slt $s2, $s0, $s1 
+beq $s2, $0, else
+sub $s1, $s1, $s0
+j loop
+else:
+sub $s0, $s0, $s1
+j loop
+done: 
+add $s0, $s0, $0
+j done
